@@ -8,25 +8,67 @@ namespace Minesweeper
     class MineButton
     {
         Button button = new Button();
-       public enum EnumStates { NotClicked, ClickedEmpty, ClickedNextToBomb, Bomb };
+        public enum EnumStates
+        {
+            Empty,
+            NextToBomb,
+            Bomb
+        };
 
         public string[] states = Enum.GetNames(typeof(EnumStates));
         string currentState;
-
+        int adjacentBombs;
+        bool isRevealed;
         public Button Button
         {
-            get { return this.button; } 
-            set { this.button = value; }
+            get
+            {
+                return this.button;
+            }
+            set
+            {
+                this.button = value;
+            }
         }
         public string CurrentState
         {
-            get { return this.currentState; }
-            set { this.currentState = value; }
+            get
+            {
+                return this.currentState;
+            }
+            set
+            {
+                this.currentState = value;
+            }
+        }
+        public int AdjacentBombs
+        {
+            get
+            {
+                return this.adjacentBombs;
+            }
+            set
+            {
+                this.adjacentBombs = value;
+            }
+        }
+        public bool IsRevealed
+        {
+            get
+            {
+                return this.isRevealed;
+            }
+            set
+            {
+                this.isRevealed = value;
+            }
         }
         public MineButton(Button button)
         {
             this.button = Button;
-            this.currentState = "NotClicked";
+            this.currentState = "Empty";
+            this.adjacentBombs = 0;
+            this.isRevealed = false;
         }
 
 

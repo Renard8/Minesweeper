@@ -35,7 +35,7 @@ namespace Minesweeper
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(448, 155);
+            this.label1.Location = new System.Drawing.Point(456, 164);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 15);
             this.label1.TabIndex = 0;
