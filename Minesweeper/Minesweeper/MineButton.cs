@@ -15,10 +15,10 @@ namespace Minesweeper
             Bomb
         };
 
-        public string[] states = Enum.GetNames(typeof(EnumStates));
-        string currentState;
+        EnumStates currentState;
         int adjacentBombs;
         bool isRevealed;
+        bool isFlagged;
         public Button Button
         {
             get
@@ -30,7 +30,7 @@ namespace Minesweeper
                 this.button = value;
             }
         }
-        public string CurrentState
+        public EnumStates CurrentState
         {
             get
             {
@@ -63,12 +63,24 @@ namespace Minesweeper
                 this.isRevealed = value;
             }
         }
+        public bool IsFlagged
+        {
+            get
+            {
+                return this.isFlagged;
+            }
+            set
+            {
+                this.isFlagged = value;
+            }
+        }
         public MineButton(Button button)
         {
             this.button = Button;
-            this.currentState = "Empty";
+            this.currentState = EnumStates.Empty;
             this.adjacentBombs = 0;
             this.isRevealed = false;
+            this.isFlagged = false;
         }
 
 
